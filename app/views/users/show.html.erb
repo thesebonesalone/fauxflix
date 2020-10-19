@@ -1,0 +1,8 @@
+user show
+
+<%= @user.username %> 
+
+<% @user.profiles.each do |profile| %> 
+  <%= link_to profile.name %> 
+<% end %>
+

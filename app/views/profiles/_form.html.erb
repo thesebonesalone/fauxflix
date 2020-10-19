@@ -1,0 +1,9 @@
+<%= render 'shared/errors', obj: @user %>
+
+
+<%= form_for(@profile) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.submit %>
+  <% end %> 
