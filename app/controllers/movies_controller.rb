@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-before_action :current_user, :current_profile
-
+  before_action :current_user, :current_profile
+  
 def index
   @movies = Movie.all
   session[:return_to] = movies_path
@@ -30,14 +30,11 @@ end
 
 private
 
-  def current_user
-    @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
-  end
-  def current_profile
-    @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
-  end
-  def current_uri
-    @current_uri = request.env['PATH_INFO']
-  end
+def current_user
+  @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
+end
+def current_profile
+  @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
+end
 
 end
