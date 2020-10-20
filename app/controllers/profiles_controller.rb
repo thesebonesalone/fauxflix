@@ -4,6 +4,7 @@ before_action :current_user, :current_profile
 def show
   @profile = Profile.find(params[:id])
   session[:profile_id] = @profile.id
+  @current_profile = @profile
   session[:return_to] = profile_path(@profile)
 end
 
