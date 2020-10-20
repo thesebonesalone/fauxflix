@@ -1,3 +1,15 @@
+<header>
+  <div class="overlay"></div>
+  <div class="home-image">
+    <%= image_tag("/images/home-background.png") %>
+  </div>
+  <div>
+  <nav class="navbar navbar-light">
+  <%= link_to image_tag("/images/fauxflix.png"), root_path, class: "navbar-brand ml-3 mt-2"%> </p>
+  </nav>
+  <%= render 'form' %>
+  </div>
+</header>
+<%= render '/layouts/footer' %>
 
-<%= render 'form' %>
 

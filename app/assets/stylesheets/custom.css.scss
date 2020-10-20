@@ -15,6 +15,11 @@ body {
   height: 100%;
 }
 
+body {
+  background: #000000;
+  background: linear-gradient(#000000fa, #141414, #000000fa);
+}
+
 #page-content {
   flex: 1 0 auto;
 }
@@ -142,6 +147,85 @@ header .overlay {
   display: none;
 }
 
+/* New Account Signup Card */
+
+.card-signup {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  background-color: rgba(0,0,0,0.60);
+}
+
+.card-signup .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+  font-family: "Netflix Sans";
+}
+
+.form-signup {
+  width: 100%;
+  opacity: 1;
+}
+
+.form-signup .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+/* new profile page */
 
 
+.card-profile-new {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  background-color: rgb(255, 255, 255);
+}
 
+.card-profile-new .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-profile-new .card-body {
+  padding: 2rem;
+}
+
+.form-profile-new {
+  width: 100%;
+}
+
+.form-profile-new .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+}

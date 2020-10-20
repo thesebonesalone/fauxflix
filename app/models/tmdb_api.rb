@@ -13,6 +13,7 @@ class TmdbApi
     end
 
     def build_info
+        #byebug
         info_hash = self.query['results'][0]
         description = info_hash['overview']
         image = info_hash['poster_path']
