@@ -1,5 +1,10 @@
-movies index
+<%= button_to "Back To Profile", profile_path(@current_profile), method: "get" %>
+<br>
+
+<h1>All Movies</h1>
 
 <% @movies.each do |movie| %> 
-  <%= link_to movie.title, movie_path(movie) %>
+  <% @parse = movie %>
+  <%= render template: "layouts/movie_card" %>
+  <br>
   <% end %> 

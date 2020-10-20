@@ -1,4 +1,10 @@
 
-<%= @tag.name %> 
+<h1><%= @tag.name %></h1> 
 
-#itemize out associated movies
+<% @tag.movies.each do |movie| %>
+    <% @parse = movie %>
+    <%= render template: "layouts/movie_card" %>
+
+<% end %>
+<br>
+<%= button_to "Back to Genres", "/tags", method: "get" %>
