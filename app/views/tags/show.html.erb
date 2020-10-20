@@ -1,10 +1,13 @@
 
 <h1><%= @tag.name %></h1> 
+<div class="container-fluid">
+  <div class="row">
+    <% @tag.movies.each do |movie| %>
+        <% @parse = movie %>
+        <%= render template: "layouts/movie_card" %>
 
-<% @tag.movies.each do |movie| %>
-    <% @parse = movie %>
-    <%= render template: "layouts/movie_card" %>
-
-<% end %>
-<br>
-<%= button_to "Back to Genres", "/tags", method: "get" %>
+    <% end %>
+    <br>
+    <%= button_to "Back to Genres", "/tags", method: "get" %>
+    <div/>
+<div/>

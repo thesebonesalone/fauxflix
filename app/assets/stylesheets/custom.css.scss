@@ -12,6 +12,7 @@
 
 html,
 body {
+  background: black;
   height: 100%;
 }
 
@@ -140,6 +141,11 @@ header .overlay {
 
 .hidden {
   display: none;
+}
+
+.limit {
+  width: 16rem;
+  word-wrap: break-word
 }
 
 

@@ -1,4 +1,17 @@
-<p>"<%= link_to @parse.title, movie_path(@parse) %>" Genre: <%= link_to @parse.tag.name, tag_path(@parse.tag) %></p>
+<style>
+div.hover-over {
+  background-color: white;
+  padding: 20px;
+  display: none;
+}
+  
+span:hover + .hover-over {
+  display: block;
+}
+</style>
+
+
+<div class="card" style="width: 12rem; background-color: white; outline-style: outset;">
 
     <% if @parse.img == nil %>
         <% @info = TmdbApi.new(@parse.title).build_info %>
@@ -7,10 +20,11 @@
 
 
 
-    <%= image_tag("https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@parse.img}") %>
-    <p><%= @parse.description %></p>
+    <span><%= link_to image_tag("https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@parse.img}"), movie_path(@parse) %></span>
+    <div class="hover-over"><%= @parse.description %></div>
     <% if !@parse.list_movies.find_by("list_id = ?",@current_profile.list.id) %>
-    <%= button_to "Add to your list", "/addtolist/#{@parse.id}" %>
+    <%= link_to "Add to Your List", "/addtolist/#{@parse.id}", :method => "post", :class => "btn btn-success" %>
     <% else %>
-    <%= button_to "Remove From Your List", "/removefromlist/#{@parse.id}" %>  
+    <%= link_to "Remove From Your list", "/removefromlist/#{@parse.id}", :method => "post", :class => "btn btn-warning" %>  
     <% end %></p>
+</div>
