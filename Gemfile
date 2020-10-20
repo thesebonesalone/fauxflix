@@ -24,6 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'figaro'
 #Used to obfuscate API keys
+gem "httparty"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
