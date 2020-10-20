@@ -2,7 +2,7 @@ require 'byebug'
 
 class ProfilesController < ApplicationController
   before_action :current_user, :current_profile
-
+  
 def show
   @profile = Profile.find(params[:id])
   session[:profile_id] = @profile.id
@@ -59,6 +59,7 @@ end
 def current_profile
   @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
 end
+
 
 
 
