@@ -2,9 +2,11 @@
 <br>
 
 <h1>All Movies</h1>
-
-<% @movies.each do |movie| %> 
-  <% @parse = movie %>
-  <%= render template: "layouts/movie_card" %>
-  <br>
-  <% end %> 
+<div class="container-sm">
+  <div class="row">
+    <% @movies.each do |movie| %> 
+      <% @parse = movie %>
+      <%= render template: "layouts/movie_card" %>
+      <% end %>
+  </div>
+</div>
