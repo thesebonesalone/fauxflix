@@ -4,21 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Life Reimagined</title>
+  <title>Fauxflix</title>
 </head>
 <body>
-
-welcome home 
-
-<p><%= link_to "Sign up Today", signup_path, class: "btn btn-dark" %> </p>  <br>
-<p> <%= link_to "Existing Users Login - click here", login_path, class:"text-black" %> <p>
-
-<div id="page-content">
-
-
-</div>
-
-<%= render 'layouts/footer' %>
+  <%= render 'layouts/welcome' %>
+  <div id="page-content"> </div>
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>

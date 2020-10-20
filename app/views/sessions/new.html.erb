@@ -1,31 +1,17 @@
-<div id="page-content-1">
-<h1 class="text-center mt-4">Log in</h1>
-
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-10">
-      <%= form_with(scope: :session, url: login_path, class: "shadow p-3 mb-3 bg-dark rounded", local: true) do |f| %>
-        <div class="form-group row">
-          <%= f.label :email, class: "col-2 col-form-label text-light" %>
-          <div class="col-10"> 
-            <%= f.email_field :email, class: "form-control shadow rounded", placeholder: "Enter your email address" %>
-          </div>
-        </div>
-
-        <div class="form-group row">
-          <%= f.label :password, class: "col-2 col-form-label text-light" %>
-          <div class="col-10"> 
-            <%= f.password_field :password, class: "form-control shadow rounded", placeholder: "Enter your password" %>
-          </div>
-        </div>
-
-        <div class="form-group row justify-content-center">
-          <%= f.submit "Log in", class: "btn btn-outline-light btn-lg" %>
-        </div>
-      <% end %>
-    </div>
-    
+<header>
+  <div class="overlay"></div>
+  <div class="home-image">
+    <%= image_tag("/images/home-background.png") %>
   </div>
-</div> 
-</div>
+  <div>
+  <nav class="navbar navbar-light">
+  <%= link_to image_tag("/images/fauxflix.png"), root_path, class: "navbar-brand ml-3 mt-2"%> </p>
+  </nav>
+  <%= render '/sessions/login_card' %>
+  </div>
+</header>
+<%= render '/layouts/footer' %>
+  
+
+
 
