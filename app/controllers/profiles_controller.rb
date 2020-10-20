@@ -1,6 +1,8 @@
-class ProfilesController < ApplicationController
-before_action :current_user, :current_profile
+require 'byebug'
 
+class ProfilesController < ApplicationController
+  before_action :current_user, :current_profile
+  
 def show
   @profile = Profile.find(params[:id])
   session[:profile_id] = @profile.id
@@ -50,12 +52,15 @@ private
 def profile_params 
   params.require(:profile).permit(:name, :user_id)
 end
+
 def current_user
   @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
 end
 def current_profile
   @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
 end
+
+
 
 
 end

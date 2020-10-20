@@ -1,7 +1,14 @@
 <p>"<%= link_to @parse.title, movie_path(@parse) %>" Genre: <%= link_to @parse.tag.name, tag_path(@parse.tag) %></p>
-<% @info = TmdbApi.new(@parse.title).build_info %>
-    <%= image_tag("https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@info[:image]}") %>
-    <p><%= @info[:description] %></p>
+
+    <% if @parse.img == nil %>
+        <% @info = TmdbApi.new(@parse.title).build_info %>
+        <% @parse.update(description: @info[:description], img: @info[:image]) %>
+    <% end %>
+
+
+
+    <%= image_tag("https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@parse.img}") %>
+    <p><%= @parse.description %></p>
     <% if !@parse.list_movies.find_by("list_id = ?",@current_profile.list.id) %>
     <%= button_to "Add to your list", "/addtolist/#{@parse.id}" %>
     <% else %>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current_user, :current_profile
+  
   def index 
     @users = User.all 
   end
@@ -49,6 +50,7 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
+
   def current_user
     @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
   end

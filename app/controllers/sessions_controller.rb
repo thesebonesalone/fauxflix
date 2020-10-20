@@ -1,8 +1,7 @@
 class SessionsController < ApplicationController
-
-def new
-
-end
+  before_action :current_user, :current_profile
+  def new
+  end
 
 
 def create
@@ -10,7 +9,7 @@ def create
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id 
       flash[:notice] = "Logged in Successfully"
-      redirect_to user 
+      redirect_to users_path(user) 
     else
       flash.now[:alert] = "There was something wrong with your login details"
       render 'new'
@@ -19,6 +18,7 @@ end
 
 def destroy
     session[:user_id] = nil 
+    session[:profile_id] = nil
     flash[:notice] = "logged out"
     redirect_to root_path
 end 
