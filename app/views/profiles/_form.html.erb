@@ -1,9 +1,9 @@
 <%= render 'shared/errors', obj: @profile %>
 
 
-<%= form_for(@profile) do |f| %>
+<%= form_for(Profile.new) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br>
-  <%= f.hidden_field :user_id, :value => @current_user %>
+  <%= f.hidden_field :user_id, :value => @current_user.id %>
   <%= f.submit %>
-  <% end %> 
+<% end %> 

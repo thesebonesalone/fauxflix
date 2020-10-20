@@ -18,7 +18,7 @@ def create
 end
 
 def destroy
-    session[:user.id] = nil 
+    session[:user_id] = nil 
     flash[:notice] = "logged out"
     redirect_to root_path
 end 

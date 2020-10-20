@@ -1,4 +1,22 @@
-profile show
+<h1><%= "What are we watching today, " + @profile.name + "?" %></h1>
 
-<%= @profile.name %> 
+<% @profile.list.movies.each do |movie| %>
+    <% @parse = movie %>
+    <%= render template: "layouts/movie_card" %>
+<% end %>
+
+<% Tag.all.each do |tag| %>
+    <h2>Genre: <%=tag.name %></h2>
+    <% tag.movies.each do |movie| %>
+        <% @parse = movie %>
+        <%= render template: "layouts/movie_card" %>
+    <% end %>
+<% end %>
+
+<p><%= link_to "All Movies", "/movies" %><p>
+<p>
+<%= button_to "Back to Profile Select", user_path(@current_user), method: "get" %>
+<%= button_to "Edit Profile", edit_profile_path, method: "get" %>
+
+</p>
 

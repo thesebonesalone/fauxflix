@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :current_user, :current_profile
   def index 
     @users = User.all 
   end
@@ -9,7 +9,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id]) 
+    @user = User.find(params[:id])
+    if @user.profiles.length == 0
+      redirect_to new_profile_path
+    end
   end
 
  
@@ -20,7 +23,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Welcome {#@user.username}! You have successfully logged in!"
+      flash[:notice] = "Welcome #{@user.username}! You have successfully logged in!"
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render 'new'
@@ -44,6 +48,12 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:username, :email, :password)
+  end
+  def current_user
+    @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
+  end
+  def current_profile
+    @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
   end
 
 
