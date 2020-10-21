@@ -1,9 +1,9 @@
 <%= render 'layouts/navbar_main' %>
 
 
-<h1><%= "What are we watching today, " + @profile.name + "?" %></h1>
-<h2 style="text-align: center;">Your List</h2>
-<div class="container-sm">
+<h1 class="text-center text-white font-nf mt-4"><%= "What are we watching today, " + @profile.name + "?" %></h1>
+<h2 class="text-center text-white font-nf mt-4">Your List</h2>
+<div class="container-md">
   <div class="row">
     <% @profile.list.movies.each do |movie| %>
         <% @parse = movie %>
@@ -14,8 +14,8 @@
 </div>
 <br>
 <% Tag.all.each do |tag| %>
-    <h2 style="text-align: center;">Genre: <%=tag.name %></h2>
-    <div class="container-sm">
+  <h2 class="text-center text-white font-nf mt-4"><%=tag.name %></h2>
+    <div class="container-md">
         <div class="row">
             <% tag.movies.each do |movie| %>
                 <% @parse = movie %>
@@ -26,12 +26,4 @@
     </div>
     <br>
     <% end %>
-    
-
-<p><%= link_to "All Movies", "/movies" %><p>
-<p>
-<%= button_to "Back to Profile Select", user_path(@current_user), method: "get" %>
-<%= button_to "Edit Profile", edit_profile_path(@current_profile), method: "get" %>
-
-</p>
 
