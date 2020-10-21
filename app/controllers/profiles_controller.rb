@@ -11,6 +11,7 @@ def show
 end
 
 def new 
+  #byebug
   @profile = Profile.new
 end
 
