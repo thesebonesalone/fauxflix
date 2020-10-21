@@ -1,9 +1,27 @@
 <%= render 'layouts/navbar_main' %>
 
 
-movie show
+<div class="embed-responsive embed-responsive-16by9 mt-3">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.url %>?rel=0&autoplay=1" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-<%= @movie.title %>
-<%= @movie.description %> 
+<section class="my-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 mx-auto">
+      <p class="text-muted font-nf"><%= @movie.title.titleize %></p>
+      <p class= "text-muted font-nf"><%= @movie.description %></p>  
+      </div>
+    </div>
+  </div>
+</section>
 
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/<%= @movie.url %>?rel=0&autoplay=1" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+
+
+
+
+
