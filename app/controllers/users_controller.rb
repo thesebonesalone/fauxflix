@@ -51,7 +51,9 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(session[:user_id])
     @user.destroy 
-    redirect_to logout_path
+    session[:user_id] = nil
+    session[:profile_id] = nil
+    redirect_to "/"
   end
   
   private 

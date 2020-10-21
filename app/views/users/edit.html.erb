@@ -13,6 +13,7 @@
                 <%= f.email_field :email, class: "form-control", placeholder: @current_user.email%><br>
                 <%= f.submit "Update Account", class: "btn btn-lg btn-danger btn-block"%>
               <% end %>  
+              <%= link_to "Delete Account", @current_user, class: "btn btn-lg btn-block btn-light", method: "delete" %>
           </div>
         </div>
       </div>
