@@ -1,8 +1,17 @@
 <%= render 'layouts/navbar_main' %>
 
+<h1 class="text-center text-white font-nf mt-4">Available Movies</h1>
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col-9">
+      <p class="text-center mt-3 mx-auto mp-5 text-white"> 
+      With the arc of a vintage CinemaScope and the signature Notflix red, our wordmark is iconic just like these theatrical gems.
+      Entertainment your way. Original Programming. Select a movie below and let the journey begin. 
+      </p>
+    </div>
+  </div>
+</div>
 
-
-<h1 class="text-white mx-auto mt-3 mb-5">All Movies</h1>
 <div class="container-sm">
   <div class="row">
     <% @movies.each do |movie| %> 

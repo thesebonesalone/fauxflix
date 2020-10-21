@@ -17,7 +17,7 @@ body {
 
 body {
   background: #000000;
-  background: linear-gradient(#000000fa, #141414, #000000fa);
+  background: linear-gradient(#000000fa, #0e0e0e, #000000fa);
 }
 
 #page-content {
@@ -228,4 +228,47 @@ header .overlay {
   display: block;
   width: 100%;
   margin-bottom: 0;
+}
+
+/* custom NF font*/
+
+.font-nf { font-family: "Netflix Sans";}
+
+/* movie card styling */
+
+div.hover-over {
+  background-color: white;
+  padding: 20px;
+  display: none;
+}
+  
+span:hover + .hover-over {
+  display: block;
+}
+
+.card {
+  width: 12rem; 
+
+}
+
+.movie-card {
+  border-style: solid;
+  border-color: rgba(248, 9, 9, 0.6);
+  border-width: 1px; 
+  border-top-width: 6px;
+  border-bottom-width: 5px;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 2px 0 rgba(95, 0, 0, 0.2), 0 6px 20px 0 rgba(131, 0, 0, 0.19);
+  background: linear-gradient(#000000fa, #020202, #000000fa);
+}
+
+.inner-movie-card {
+
+
+}
+
+.movie-poster {
+  border-radius: 2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }

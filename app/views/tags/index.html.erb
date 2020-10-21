@@ -1,21 +1,23 @@
 <%= render 'layouts/navbar_main' %>
 
+<h1 class="text-center text-white font-nf mt-4">Movie Genres</h1>
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col-9">
+      <p class="text-center mt-3 mx-auto mp-5 text-white"> 
+      Movies move us like nothing else can, whether they're scary, funny, dramatic, romantic,
+      or anywhere in-between. Select a genre and let your journey begin. We'll take care of the rest. 
+      </p>
+    </div>
+  </div>
+</div>
 
-
-p {
-  text-align: center
-}
-
-h1 {
-  text-align: center
-
-}
-
-<h1>Genres</h1>
-
-
-<% @tags.each do |tag| %>
-  <p><%= link_to tag.name, tag_path(tag) %></p>
-  <% end %>
-
-<%= button_to "Back to Profile", profile_path(@current_profile), method: "get" %>
+<div class="row justify-content-center">
+  <div class="col-10">
+    <% @tags.each do |tag| %>
+      <div class = "form-group row">
+        <%= link_to tag.name, tag_path(tag), class: "col-2 mx-auto text-white font-nf btn btn-danger" %><br>
+      </div>
+    <% end %>
+  </div>
+</div>
