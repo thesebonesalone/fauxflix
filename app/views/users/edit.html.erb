@@ -10,6 +10,8 @@
               <%= form_for(@current_user, method: "patch") do |f| %>
                 <%= f.text_field :username, class: "form-control", placeholder: @current_user.username%><br>
                 <%= f.email_field :email, class: "form-control", placeholder: @current_user.email%><br>
+                <%= f.password_field :password, class: "form-control", placeholder: "Enter new password" %><br>
+
                 <%= f.submit "Update Account", class: "btn btn-lg btn-danger btn-block"%>
               <% end %>  
               <%= link_to "Delete Account", @current_user, class: "btn btn-lg btn-block btn-light", method: "delete" %>
