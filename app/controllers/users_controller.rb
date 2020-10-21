@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :current_user, :current_profile
-  skip_before_action :current_profile, :only => [:show]
+  skip_before_action :current_profile, :only => [:show, :new, :create]
+  skip_before_action :current_user, :only => [:new, :create]
   
   def index 
     @users = User.all 
@@ -36,14 +37,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(sessions.username)
-    @user = update(user_params)
-    redirect_to @user
+    @user = User.find(session[:user_id])
+    if @user.update(user_params)
+      flash[:notice] = "User successfully updated"
+      redirect_to @user
+    else
+      flash[:error] = "E-mail must be in valid E-mail format"
+      render 'edit'
+    end
   end
 
 
   def destroy
-    @user = User.find(sessions.username)
+    @user = User.find(session[:user_id])
     @user.destroy 
     redirect_to logout_path
   end

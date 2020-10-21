@@ -8,25 +8,14 @@
         <div class="card card-profile my-5">
           <div class="card-body">
             <h5 class="card-title text-center">Let's create a new profile</h5>
-
-            <form class="form-signin">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="profile name" required autofocus>
-              </div>
-              <button class="btn btn-lg btn-danger btn-block text-uppercase" type="submit">Create New Profile</button>
-            </form>
-
-            
+              <%= form_for(Profile.new) do |f| %>
+                <%= f.text_field :name, class: "form-control", placeholder: "profile name"%><br>
+                <%= f.hidden_field :user_id, :value => @current_user.id %>
+                <%= f.submit "New Profile", class: "btn btn-lg btn-danger btn-block"%>
+              <% end %>  
           </div>
         </div>
       </div>
     </div>
   </div>
 </body>
-
-<%= form_for(Profile.new) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
-  <%= f.hidden_field :user_id, :value => @current_user.id %>
-  <%= f.submit %>
-<% end %> 
