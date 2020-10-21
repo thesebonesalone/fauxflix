@@ -3,7 +3,7 @@
 
 
 <h1><%= @tag.name %></h1> 
-<div class="container-fluid">
+<div class="container-sm">
   <div class="row">
     <% @tag.movies.each do |movie| %>
         <% @parse = movie %>
@@ -11,6 +11,6 @@
 
     <% end %>
     <br>
-    <%= button_to "Back to Genres", "/tags", method: "get" %>
-    <div/>
+    
 <div/>
+<br>

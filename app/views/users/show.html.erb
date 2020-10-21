@@ -2,14 +2,33 @@
 
 
 
-<h1>Who's watching today?</h1>
-  <br>
-  <% @user.profiles.each do |profile| %> 
-    <p><%= link_to profile.name, profile_path(profile) %></p>
-  <% end %>
-  <br>
-    <p><%= button_to "Create Profile", new_profile_path, method: :get %>
-    <%= button_to "Logout", logout_path, method: "delete" %>
-    <%= button_to "Edit User", edit_user_path, method: "get" %>
-    </p>
-
+    <h1 class="text-center text-white font-nf mt-4">Welcome, <%=@user.username.titleize%>!</h1>
+    <div class="container mb-3">
+      <div class="row justify-content-sm-center">
+        <div class="col-9">
+          <p class="text-center mt-3 mx-auto mp-5 text-white"> 
+          Who's watching today? 
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <% @user.profiles.each do |profile| %>
+          <div class = "form-group row">
+            <%= link_to profile.name, profile_path(profile), class: "col-2 mx-auto text-white font-nf btn btn-danger" %><br>
+          </div>
+        <% end %>
+        <div class = "form-group row">
+            <%= link_to "Create New Profile", new_profile_path, method: :get, class: "col-2 mx-auto text-black font-nf btn btn-light"%>
+        </div>
+        <div class = "form-group row">
+            <%= link_to "Logout", logout_path, method: "delete", class: "col-2 mx-auto text-black font-nf btn btn-light"%>
+        </div>
+        <div class = "form-group row">
+            <%= link_to "Edit User", edit_user_path, method: "get", class: "col-2 mx-auto text-black font-nf btn btn-light" %>
+        </div>
+      </div>
+    </div>
+    
