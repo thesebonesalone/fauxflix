@@ -7,7 +7,8 @@
   <div class="row">
     <% @profile.list.movies.each do |movie| %>
         <% @parse = movie %>
-        <%= render template: "layouts/movie_card" %>
+        <div class="mx-3 my-3"> <%= render template: "layouts/movie_card" %> </div>
+        
     <% end %>
   </div>
 </div>
@@ -18,7 +19,8 @@
         <div class="row">
             <% tag.movies.each do |movie| %>
                 <% @parse = movie %>
-            <%= render template: "layouts/movie_card" %>
+                <div class="mx-3 my-3"> <%= render template: "layouts/movie_card" %> </div>
+            
         <% end %>
         </div>
     </div>
@@ -29,7 +31,7 @@
 <p><%= link_to "All Movies", "/movies" %><p>
 <p>
 <%= button_to "Back to Profile Select", user_path(@current_user), method: "get" %>
-<%= button_to "Edit Profile", edit_profile_path, method: "get" %>
+<%= button_to "Edit Profile", edit_profile_path(@current_profile), method: "get" %>
 
 </p>
 

@@ -15,10 +15,14 @@ class TmdbApi
     def build_info
         #byebug
         info_hash = self.query['results'][0]
-        description = info_hash['overview']
-        image = info_hash['poster_path']
-        language = info_hash['original_language']
-        release_date = info_hash['release_date']
-        return {:description => description, :image => image, language => language, :release_date => release_date}
+        if info_hash
+            description = info_hash['overview']
+            image = info_hash['poster_path']
+            language = info_hash['original_language']
+            release_date = info_hash['release_date']
+            return {:description => description, :image => image, language => language, :release_date => release_date}
+        else
+            return {:description => "This movie was not found at the moment!", :image => "w94_and_h141_bestv2/ezQpwZnYcOEeyER0wKSdATkxUUE.jpg", language => "NA", :release_date => "The Past"}
+        end
     end
 end

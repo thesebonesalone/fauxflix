@@ -1,5 +1,25 @@
 
 
 
-<h1>Edit Profile</h1>
-<%= render 'form' %>
+
+<body class="boilerplate">
+<%= render 'layouts/navbar_edit' %>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-profile my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Let's change your name.</h5>
+              <%= form_for(@current_profile, method: "patch") do |f| %>
+                <%= f.text_field :name, class: "form-control", placeholder: "profile name"%><br>
+                <%= f.hidden_field :user_id, :value => @current_user.id %>
+                <%= f.submit "Update Profile", class: "btn btn-lg btn-danger btn-block"%>
+              <% end %>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

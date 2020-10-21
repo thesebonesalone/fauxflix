@@ -1,7 +1,21 @@
-<%= render 'layouts/navbar_main' %>
+<body class="boilerplate">
+<%= render 'layouts/navbar_edit' %>
 
 
-user edit
-
-
-need form for editing user information (name, password, email)
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-profile my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Account Info</h5>
+              <%= form_for(@current_user, method: "patch") do |f| %>
+                <%= f.text_field :username, class: "form-control", placeholder: @current_user.username%><br>
+                <%= f.email_field :email, class: "form-control", placeholder: @current_user.email%><br>
+                <%= f.submit "Update Account", class: "btn btn-lg btn-danger btn-block"%>
+              <% end %>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

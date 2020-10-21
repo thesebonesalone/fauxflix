@@ -12,31 +12,40 @@ tag_array = [
     { :name => "Comedy"},
     { :name => "Horror"},
     { :name => "Romance"},
-    { :name => "Action"}
+    { :name => "Action"},
+    { :name => "Musical"},
+    { :name => "Western"}
 ]
 tag_array.each do |tag|
     Tag.create(tag)
 end
 Movie.destroy_all
 movie_array = [
-    { :title => "Kung Fury", :url => "bS5P_LAqiVg", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Angel and the Badman", :url => "659XwLyOIQw", :description => "A Test Description. To be changed later.",:tag_id => rand(4)+1},
-    { :title => "Carnival of Souls", :url => "kfrab7_5wc0", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Carnival Story", :url => "tEqNjz3EwOY",:description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "A Farewell to Arms", :url => "JIyUsRq49to", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "The Devil Bat", :url => "3xOo4EkQ9mc",:description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "The General", :url => "V-8I0TyrOpU", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "The Deadly Companions", :url => "cKiq6G6B8dA", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "God's Little Acre", :url => "YlRAXiMS0bA", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Go For Broke!", :url => "gOfyE3ei0nY", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Gulliver's Travels", :url => "H6gLRQpisuI", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Captain January", :url => "MpA5suo_V_U", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "The Gorilla", :url => "qS-vll1rEsM", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Dixiana", :url => "nu2S6266Wjw", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Father's Little Dividend", :url => "aHT7CVsQZn8", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "The First Legion", :url => "eLjjYut7KC0", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Plan 9 From Outer Space", :url => "Ln7WF78PolA", :description => "A Test Description. To Be Changed Later.", :tag_id => rand(4)+1},
-    { :title => "Manos The Hands of Fate", :url => "LlG60q2mW90", :description => "A Test Description. To Be Changed Later.", :tag_id => rand(4)+1}
+    { :title => "Kung Fury", :url => "bS5P_LAqiVg", :description => "A Test Description. To be changed later.", :tag_id => 5},
+    { :title => "Angel and the Badman", :url => "659XwLyOIQw", :description => "A Test Description. To be changed later.",:tag_id => 7},
+    { :title => "Carnival of Souls", :url => "kfrab7_5wc0", :description => "A Test Description. To be changed later.", :tag_id => 3},
+    { :title => "Carnival Story", :url => "tEqNjz3EwOY",:description => "A Test Description. To be changed later.", :tag_id => 4},
+    { :title => "A Farewell to Arms", :url => "JIyUsRq49to", :description => "A Test Description. To be changed later.", :tag_id => 1},
+    { :title => "The Devil Bat", :url => "3xOo4EkQ9mc",:description => "A Test Description. To be changed later.", :tag_id => 3},
+    { :title => "The General", :url => "V-8I0TyrOpU", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "The Deadly Companions", :url => "cKiq6G6B8dA", :description => "A Test Description. To be changed later.", :tag_id => 7},
+    { :title => "God's Little Acre", :url => "YlRAXiMS0bA", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Go For Broke!", :url => "gOfyE3ei0nY", :description => "A Test Description. To be changed later.", :tag_id => 1},
+    { :title => "Gulliver's Travels", :url => "H6gLRQpisuI", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Captain January", :url => "MpA5suo_V_U", :description => "A Test Description. To be changed later.", :tag_id => 6},
+    { :title => "The Gorilla", :url => "qS-vll1rEsM", :description => "A Test Description. To be changed later.", :tag_id => 3},
+    { :title => "Dixiana", :url => "nu2S6266Wjw", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Fathers Little Dividend", :url => "aHT7CVsQZn8", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Royal Wedding", :url => "FZ5X0a_PDGU", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Plan 9 From Outer Space", :url => "Ln7WF78PolA", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
+    { :title => "Manos The Hands of Fate", :url => "LlG60q2mW90", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
+    { :title => "Mr. Imperium", :url => "C1ys0nTlauk", :description => "A Test Description. To Be Changed Later.", :tag_id => 6},
+    { :title => "Road to Bali", :url => "j5JQ1iaq6rE", :description => "A Test Description. To Be Changed Later.", :tag_id => 2},
+    { :title => "McLintock", :url => "RGX2GKfhZvg", :description => "A Test Description. To Be Changed Later.", :tag_id => 7},
+    { :title => "The Driller Killer", :url => "s51BHigXrm4", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
+    { :title => "Night of the Living Dead", :url => "H91BxkBXttE", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
+    { :title => "The Last Man On Earth", :url => "feQIhzNpBLQ", :description => "A Test Description. To Be Changed Later.", :tag_id => 1},
+    { :title => "Tarzan and The Green Goddess", :url => "CnTMHT_TzMg", :description => "A Test Description. To Be Changed Later.", :tag_id => 5}
 ]
 movie_array.each do |movie|
     Movie.create(movie)
