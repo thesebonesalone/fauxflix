@@ -31,6 +31,9 @@ end
 private
 
 def current_user
+  if !session[:user_id]
+    return redirect_to "/"
+  end
   @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
 end
 def current_profile
