@@ -35,7 +35,8 @@ movie_array = [
     { :title => "Dixiana", :url => "nu2S6266Wjw", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
     { :title => "Father's Little Dividend", :url => "aHT7CVsQZn8", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
     { :title => "The First Legion", :url => "eLjjYut7KC0", :description => "A Test Description. To be changed later.", :tag_id => rand(4)+1},
-    { :title => "Plan 9 From Outer Space", :url => "Ln7WF78PolA", :description => "A Test Description. To Be Changed Later.", :tag_id => rand(4)+1}
+    { :title => "Plan 9 From Outer Space", :url => "Ln7WF78PolA", :description => "A Test Description. To Be Changed Later.", :tag_id => rand(4)+1},
+    { :title => "Manos The Hands of Fate", :url => "LlG60q2mW90", :description => "A Test Description. To Be Changed Later.", :tag_id => rand(4)+1}
 ]
 movie_array.each do |movie|
     Movie.create(movie)

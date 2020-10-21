@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current_user, :current_profile
+  skip_before_action :current_profile, :only => [:show]
   
   def index 
     @users = User.all 
@@ -11,8 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    session[:profile_id] ||= @user.profiles[0]
-    @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
+    # session[:profile_id] = Profile.find(@user.profiles[0].id)
+    # @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
     if @user.profiles.length == 0
       redirect_to new_profile_path
     end
