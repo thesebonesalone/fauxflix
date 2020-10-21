@@ -7,12 +7,7 @@
 </div>
 
 <div>
-<nav class="navbar navbar-light">
-<%= link_to image_tag("/images/fauxflix.png"), root_path, class: "navbar-brand ml-3 mt-2"%> </p>
-  <form class="form-inline">
-  <%= link_to "Sign In", login_path, class:"text-white btn btn-danger mr-5 mt-1" %>
-  </form>
-</nav>
+<%= render '/layouts/navbar_welcome' %>
 </div>
 
 <div class=" hero-card container h-100 ">
@@ -23,6 +18,7 @@
       <p><%= link_to "GET STARTED", signup_path, class: "sign-up btn btn-danger" %> </p>  <br>
     </div>
   </div>
+
 </div>
 
 </header>
