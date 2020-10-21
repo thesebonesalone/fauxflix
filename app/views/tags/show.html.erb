@@ -1,16 +1,40 @@
 <%= render 'layouts/navbar_main' %>
 
+<h1 class="text-center text-white font-nf mt-4"><%= @tag.name %></h1>
+<div class="container mb-3">
+  <div class="row justify-content-sm-center">
+    <div class="col-9">
+      <p class="text-center mt-3 mx-auto mp-5 text-white"> 
+      Movies move us like nothing else can, whether they're scary, funny, dramatic, romantic,
+      or anywhere in-between. Select a movie and relax. We'll take care of the rest
+      </p>
+    </div>
+  </div>
+</div>
 
 
+<<<<<<< HEAD
 <h1><%= @tag.name %></h1> 
 <div class="container-sm">
   <div class="row">
+=======
+<div class="row justify-content-center">
+  <div class="col-10 ">
+<div class="container-fluid">
+  <div class="row justify-content-center">
+>>>>>>> 3fe5a2293c93a357dda2689f829e01c3a2491828
     <% @tag.movies.each do |movie| %>
         <% @parse = movie %>
         <div class="mx-3 my-3"> <%= render template: "layouts/movie_card" %> </div>
-
     <% end %>
+<<<<<<< HEAD
     <br>
     
 <div/>
 <br>
+=======
+    <div/>
+<div/>
+<div/>
+<div/>
+>>>>>>> 3fe5a2293c93a357dda2689f829e01c3a2491828
