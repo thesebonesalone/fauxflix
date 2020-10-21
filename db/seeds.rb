@@ -8,13 +8,13 @@
 
 Tag.destroy_all
 tag_array = [
-    { :name => "Drama"},
-    { :name => "Comedy"},
-    { :name => "Horror"},
-    { :name => "Romance"},
-    { :name => "Action"},
-    { :name => "Musical"},
-    { :name => "Western"}
+    { :name => "Drama", :description => "For those of us who don't have enough already."},
+    { :name => "Comedy", :description => "Turn off your brain and fall into some laughter."},
+    { :name => "Horror", :description => "Nail biters beware, here lies trouble."},
+    { :name => "Romance", :description => "Sweep yourself off your own feet with these romantic classics."},
+    { :name => "Action", :description => "High octane thrills, dangerous spills. Here there be explosions."},
+    { :name => "Musical", :description => "Welcome one and all to the greatest spectacles of screen and sound."},
+    { :name => "Western", :description => "Howdy, pardner. Be quick, or be dead in the Wild Wild West."}
 ]
 tag_array.each do |tag|
     Tag.create(tag)
@@ -35,7 +35,7 @@ movie_array = [
     { :title => "Captain January", :url => "MpA5suo_V_U", :description => "A Test Description. To be changed later.", :tag_id => 6},
     { :title => "The Gorilla", :url => "qS-vll1rEsM", :description => "A Test Description. To be changed later.", :tag_id => 3},
     { :title => "Dixiana", :url => "nu2S6266Wjw", :description => "A Test Description. To be changed later.", :tag_id => 2},
-    { :title => "Fathers Little Dividend", :url => "aHT7CVsQZn8", :description => "A Test Description. To be changed later.", :tag_id => 2},
+    { :title => "Father's Little Dividend", :url => "aHT7CVsQZn8", :description => "A Test Description. To be changed later.", :tag_id => 2},
     { :title => "Royal Wedding", :url => "FZ5X0a_PDGU", :description => "A Test Description. To be changed later.", :tag_id => 2},
     { :title => "Plan 9 From Outer Space", :url => "Ln7WF78PolA", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
     { :title => "Manos The Hands of Fate", :url => "LlG60q2mW90", :description => "A Test Description. To Be Changed Later.", :tag_id => 3},
