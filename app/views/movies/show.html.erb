@@ -1,6 +1,5 @@
 <%= render 'layouts/navbar_main' %>
 
-
 <div class="embed-responsive embed-responsive-16by9 mt-3">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.url %>?rel=0&autoplay=1" frameborder="0" allow="clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -9,8 +8,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mx-auto">
-      <p class="text-muted font-nf"><%= @movie.title.titleize %></p>
-      <p class= "text-muted font-nf"><%= @movie.description %></p>  
+      <p class=" movie-show-text font-nf"><%= @movie.title.titleize %></p>
+      <p class= "movie-show-text"><%= @movie.description %></p>  
       </div>
     </div>
   </div>
