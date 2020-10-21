@@ -12,8 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # session[:profile_id] = Profile.find(@user.profiles[0].id)
-    # @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
+    session[:profile_id] = Profile.find(@user.profiles[0].id).id
+    @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
     if @user.profiles.length == 0
       redirect_to new_profile_path
     end
@@ -58,6 +58,7 @@ class UsersController < ApplicationController
     @current_user ||= session[:user_id] && User.find_by("id = ?",session[:user_id])
   end
   def current_profile
+    #byebug
     @current_profile ||= session[:profile_id] && Profile.find_by("id = ?",session[:profile_id])
   end
 
