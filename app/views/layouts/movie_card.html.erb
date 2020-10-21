@@ -1,6 +1,6 @@
 
 <div class="container movie-card">
-<div class="card my-2 shadow mx-1">
+<div class="card-movie my-2 shadow mx-1">
 
     <% if @parse.img == nil %>
         <% @info = TmdbApi.new(@parse.title).build_info %>
