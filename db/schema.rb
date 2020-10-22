@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_21_182845) do
+ActiveRecord::Schema.define(version: 2020_10_22_134549) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "profile_id"
+    t.index ["movie_id"], name: "index_likes_on_movie_id"
+    t.index ["profile_id"], name: "index_likes_on_profile_id"
+  end
 
   create_table "list_movies", force: :cascade do |t|
     t.integer "list_id"

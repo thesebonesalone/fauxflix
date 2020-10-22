@@ -28,6 +28,26 @@ def removefromlist
   redirect_to session.delete(:return_to)
 end
 
+def addlike
+  @movie = Movie.find(params[:id])
+  @profile = @current_profile
+  new_like = Like.new
+  new_like.movie_id = @movie.id
+  new_like.profile_id = @profile.id
+  new_like.save
+  redirect_to movie_path(@movie)
+end
+
+def removelike
+  @movie = Movie.find(params[:id])
+  @profile = @current_profile
+  like = Like.where(movie_id: @movie.id, profile_id: @profile.id)[0]
+  Like.destroy(like.id)
+  redirect_to movie_path(@movie)
+end
+
+
+
 private
 
 def current_user

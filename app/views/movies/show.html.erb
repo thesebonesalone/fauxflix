@@ -8,6 +8,12 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 mx-auto">
+      <% if Like.where(movie_id: @movie.id, profile_id: @current_profile.id)[0] %>
+        <p><%= link_to "Unlike", "/removelike/#{@movie.id}", class: "col-2 mx-auto text-white font-nf btn btn-dark", method: "post" %></p>
+      <% else %>
+        <p><%= link_to "Like", "/addlike/#{@movie.id}", class: "col-2 mx-auto text-white font-nf btn btn-danger", method: "post" %></p>
+      <% end %>
+      
       <p class=" movie-show-text font-nf"><%= @movie.title.titleize %></p>
       <p class= "movie-show-text"><%= @movie.description %></p>  
       </div>

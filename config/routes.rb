@@ -14,5 +14,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'addtolist/:id', to: 'movies#addtolist'
   post 'removefromlist/:id', to: 'movies#removefromlist'
+  post 'addlike/:id', to: 'movies#addlike'
+  post 'removelike/:id', to: 'movies#removelike'
 end
 

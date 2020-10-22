@@ -8,7 +8,7 @@
     <% end %>
 
     <span class="mb-2 mt-1 movie-poster" ><%= link_to image_tag("https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@parse.img}"), movie_path(@parse) %></span>
-    <div class="hover-over mx-2"><%= @parse.description %></div>
+    <div class="hover-over mx-2"><%=@parse.likes.length%> Likes <br> <%= @parse.description %></div>
     <% if !@parse.list_movies.find_by("list_id = ?",@current_profile.list.id) %>
     <%= link_to "Add to Your List", "/addtolist/#{@parse.id}", :method => "post", :class => "btn btn-danger" %>
     <% else %>
