@@ -247,8 +247,11 @@ span:hover + .hover-over {
 }
 
 .card-1{
-  width: 12rem; 
-
+  padding: 2px 5px 2px 5px;
+  margin-right: 10px;
+  width: 200px;
+  height: 353;
+  /*width: 12rem;*/ 
 }
 
 .movie-card {
@@ -274,6 +277,3 @@ span:hover + .hover-over {
 .movie-show-text {
   color: rgb(230, 230, 230);
 }
-
-
-/* welcome screen background image crawl */
