@@ -1,0 +1,140 @@
+<<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  overflow: hidden;
+  transform: rotateT(25deg);
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.column {
+  float: left;
+  width: 12.5%;
+  padding: 10px;
+}
+
+.column img {
+  margin-top: 12px;
+  transform: skewY(25deg);
+}
+
+.row:after {
+  content: "";
+  
+  -ms-transform: skewY(20deg);
+  display: table;
+  clear: both;
+}
+</style>
+<body>
+
+
+<% @pictures = Movie.all.map{|movie| "https://image.tmdb.org/t/p/w188_and_h282_bestv2" +movie.img} %>
+<% Movie.all.each do|movie| %>
+  <% if movie.backdrop != nil %>
+    <% @pictures << "https://image.tmdb.org/t/p/w533_and_h300_bestv2/" +movie.backdrop %>
+  <% end %>
+<% end %>
+<div class="row"> 
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+  </div>
+</div>
+
+</body>
+</html>

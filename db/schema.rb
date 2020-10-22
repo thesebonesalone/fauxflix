@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_134549) do
+ActiveRecord::Schema.define(version: 2020_10_22_161146) do
 
   create_table "likes", force: :cascade do |t|
     t.integer "movie_id"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2020_10_22_134549) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "img"
+    t.string "backdrop"
   end
 
   create_table "profiles", force: :cascade do |t|
