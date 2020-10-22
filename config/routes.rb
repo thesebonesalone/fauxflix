@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   post 'removefromlist/:id', to: 'movies#removefromlist'
   post 'addlike/:id', to: 'movies#addlike'
   post 'removelike/:id', to: 'movies#removelike'
+  get 'testbg', to: 'welcome#testbg'
 end
 

@@ -1,0 +1,88 @@
+<<!DOCTYPE html>
+<html>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.column {
+  float: left;
+  width: 12.5%;
+  padding: 10px;
+}
+
+.column img {
+  margin-top: 12px;
+  opacity: 0.3;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <h1>Image Grid</h1>
+</div>
+
+<!-- Photo Grid -->
+<% @pictures = Movie.all.map{|movie| movie.img} %>
+<div class="row"> 
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>  
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+  <div class="column">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  <img src=<%= "https://image.tmdb.org/t/p/w188_and_h282_bestv2#{@pictures.sample}" %> style="width:100%">
+  </div>
+</div>
+
+</body>
+</html>
