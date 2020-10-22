@@ -24,7 +24,7 @@
         <%= link_to "Account Homepage", user_path(@current_user), class: "dropdown-item font-nf" %>
         <%= link_to "Account Settings", edit_user_path(@current_user), class: "dropdown-item font-nf" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Logout", logout_path, class: "dropdown-item font-nf" %>
+          <%= link_to "Logout", logout_path ,method: "delete", class: "dropdown-item font-nf" %>
         </div>
       </li>
 
