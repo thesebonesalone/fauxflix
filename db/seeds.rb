@@ -60,7 +60,6 @@ movie_array = [
     { :title => "Blood on the Sun", :url => "IT5kXxUQU_Q", :description => "A Test Description. To Be Changed Later.", :tag_id => 1},
     { :title => "Baby Face Nelson", :url => "c4qQ80rlwos", :description => "A Test Description. To Be Changed Later.", :tag_id => 1},
     { :title => "Kiss and Tell", :url => "RMHDy5os7vo", :description => "A Test Description. To Be Changed Later.", :tag_id => 1},
-    { :title => "Copacabana", :url => "TY_tXb7JF3I", :description => "A Test Description. To Be Changed Later.", :tag_id => 6},
     { :title => "Second Chorus", :url => "gLP9YaGyNhc", :description => "A Test Description. To Be Changed Later.", :tag_id => 6},
     { :title => "Diamond Horseshoe", :url => "JUY41kGOoU0", :description => "A Test Description. To Be Changed Later.", :tag_id => 6},
     { :title => "Loving You", :url => "bXcxrK-_APk", :description => "A Test Description. To Be Changed Later.", :tag_id => 6},
