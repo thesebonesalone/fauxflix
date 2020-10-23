@@ -44,7 +44,7 @@ body {
       <% @posters << "https://image.tmdb.org/t/p/w533_and_h300_bestv2/" + movie.backdrop %>
       <% end %>
     <% end %>
-    <div style="transform: skew(-17deg); transform: rotateZ(15deg) prospective:200px; overflow: visible; scale(1.5,1.5); margin-right: -150px; margin-left: -150px; height: 200%;">
+    <div style="transform: skew(-17deg); transform: rotateZ(15deg) perspective:200px; overflow: visible; scale(1.5,1.5); margin-right: -150px; margin-left: -150px; height: 200%;">
       <% 20.times do %>
         <div class="row">
           <% 6.times do %>
