@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+you'll need to run bundle install in your command line, followed by creating the file application.yml in the config folder. Here you need to define a Constant called TMDB and give it an API key from TMDB. I'm sure there's a better way to do this. I'm not there yet.
 
 * ......fc
