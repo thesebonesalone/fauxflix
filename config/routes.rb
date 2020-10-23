@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   post 'addlike/:id', to: 'movies#addlike'
   post 'removelike/:id', to: 'movies#removelike'
   get 'testbg', to: 'welcome#testbg'
+  get 'admin', to: 'user#admin'
 end
 

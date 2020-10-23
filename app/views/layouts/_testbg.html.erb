@@ -17,10 +17,13 @@ body {
 
 .row {
   float: center;
-  width: 175%;
+  width: 100%;
   padding: 0.5%;
-  transform: skewY(10deg);
-  overflow-wrap: normal
+  content: "";
+  display: table;
+  clear: both;
+  overflow-wrap: normal;
+
 }
 
 .row img {
@@ -28,13 +31,10 @@ body {
   opacity: 0.5;
 }
 
-.row {
-  content: "";
-  transform: skewY(10deg);
-  display: table;
-  clear: both;
-  overflow-wrap: normal
-}
+
+
+
+
 </style>
   <body >
     <% @pictures = Movie.all.map{|movie| "https://image.tmdb.org/t/p/w188_and_h282_bestv2" +movie.img} %>
@@ -44,15 +44,15 @@ body {
       <% @posters << "https://image.tmdb.org/t/p/w533_and_h300_bestv2/" + movie.backdrop %>
       <% end %>
     <% end %>
-    <div style="transform: skew(-17deg); transform: rotateZ(15deg) perspective:200px; overflow: visible; scale(1.5,1.5); margin-right: -150px; margin-left: -150px; height: 200%;">
+    <div style="transform: skew(-17deg); transform: rotateZ(15deg) perspective:200px; overflow: visible; scale(3.5,1.5); margin-right: -150px; margin-left: -150px; height: 200%;">
       <% 20.times do %>
-        <div class="row">
+        <div class="row" style="transform: skewY(10deg); width: 175%;">
           <% 6.times do %>
             <img src=<%= "#{@pictures.sample}" %> style="width:4%">
             <img src=<%= "#{@posters.sample}" %> style="width:10.6%">
           <% end %>
         </div>
-        <div class="row">
+        <div class="row" style="transform: skewY(10deg); width: 175%;">
           <% 3.times do %>
             <img src=<%= "#{@posters.sample}" %> style="width:10.6%">
             <img src=<%= "#{@posters.sample}" %> style="width:10.6%">

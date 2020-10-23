@@ -6,9 +6,27 @@ def index
   session[:return_to] = movies_path
 end 
 
+def new
+  if @current_user.admin == false
+    redirect_to "/"
+  end
+  @movie = Movie.new
+end
+
 def show
   @movie = Movie.find(params[:id])
   session[:return_to] = movies_path(@movie)
+end
+
+def create
+  #byebug
+  @movie = Movie.new(movie_params)
+  if @movie.save
+    flash[:notice] = "Movie succesfully added"
+    redirect_to movie_path(@movie)
+  else
+    render 'new'
+  end
 end
 
 def addtolist
@@ -49,7 +67,9 @@ end
 
 
 private
-
+def movie_params
+  params.require(:movie).permit(:title, :url, :tag_id)
+end
 def current_user
   if !session[:user_id]
     return redirect_to "/"
