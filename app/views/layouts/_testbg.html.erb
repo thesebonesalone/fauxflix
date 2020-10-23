@@ -4,10 +4,10 @@
 * {
   box-sizing: border-box;
 }
-.transformer body {
+body {
   margin: 0;
   overflow: hidden;
-  transform: rotateT(0deg);
+ 
 }
 
 .header {
@@ -15,40 +15,52 @@
   padding: 32px;
 }
 
-.column {
+.row {
   float: center;
-  width: 12.5%;
-  padding: 10px;
+  width: 175%;
+  padding: 0.5%;
+  transform: skewY(10deg);
+  overflow-wrap: normal
 }
 
-.column img {
-  margin-top: 12px;
-  transform: skewY(25deg)
+.row img {
+  margin-right: 0.5%;
+  opacity: 0.5;
 }
 
-.row:after {
+.row {
   content: "";
-  
-  -ms-transform: skewx(20deg);
+  transform: skewY(10deg);
   display: table;
   clear: both;
+  overflow-wrap: normal
 }
 </style>
-  <body class="transformer">
+  <body >
     <% @pictures = Movie.all.map{|movie| "https://image.tmdb.org/t/p/w188_and_h282_bestv2" +movie.img} %>
-    <% Movie.all.each do|movie| %>
+    <% @posters = [] %>
+    <% Movie.all.each do |movie| %>
       <% if movie.backdrop != nil %>
-        <% @pictures << "https://image.tmdb.org/t/p/w533_and_h300_bestv2/" +movie.backdrop %>
+      <% @posters << "https://image.tmdb.org/t/p/w533_and_h300_bestv2/" + movie.backdrop %>
       <% end %>
     <% end %>
-    <div class="row" width="100%"> 
-      <%= 20.times do %>
-        <div class="column">
-          <% 12.times do %>
-            <img src=<%= "#{@pictures.sample}" %> style="width:100%">
+    <div style="transform: skew(-17deg); transform: rotateZ(5deg); overflow: visible; scale(1.5,1.5); margin-right: -150px; margin-left: -150px; height: 200%;">
+      <% 20.times do %>
+        <div class="row">
+          <% 6.times do %>
+            <img src=<%= "#{@pictures.sample}" %> style="width:4%">
+            <img src=<%= "#{@posters.sample}" %> style="width:10.6%">
+          <% end %>
+        </div>
+        <div class="row">
+          <% 3.times do %>
+            <img src=<%= "#{@posters.sample}" %> style="width:10.6%">
+            <img src=<%= "#{@posters.sample}" %> style="width:10.6%">
+            <img src=<%= "#{@pictures.sample}" %> style="width:4%">
           <% end %>
         </div>
       <% end %>
+    </div>
     </div>
   </body>
 </html>
